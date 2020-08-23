@@ -6,6 +6,9 @@ namespace KJConsole {
 	private:
 		bool lineSeperate = true;
 
+		// void init(int width, int height, int x, int y, char* text)
+		// initializing this object
+		void init(char* text);
 	public:
 		// Constructor
 		// > Parameter - none
@@ -35,7 +38,7 @@ namespace KJConsole {
 		bool isLineSeperate() { return lineSeperate; }
 
 		// void print()
-		void print();
+		virtual void print();
 
 		// TODO: KJLabel - 정렬 기준에 따른 출력
 	};

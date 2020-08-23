@@ -141,7 +141,6 @@
   <ItemGroup>
     <ClInclude Include="KJConsole\Components\KJComponent.h" />
     <ClInclude Include="KJConsole\Components\KJComponents.h" />
-    <ClInclude Include="KJConsole\Components\KJContainer.h" />
     <ClInclude Include="KJConsole\Components\KJLabel.h" />
     <ClInclude Include="KJConsole\KJConsole.h" />
     <ClInclude Include="KJConsole\System\ArrayList.h" />
@@ -150,7 +149,6 @@
   <ItemGroup>
     <ClCompile Include="Example\Example1.cpp" />
     <ClCompile Include="KJConsole\Components\KJComponent.cpp" />
-    <ClCompile Include="KJConsole\Components\KJContainer.cpp" />
     <ClCompile Include="KJConsole\Components\KJLabel.cpp" />
     <ClCompile Include="KJConsole\System\KJConsoleSystem.cpp" />
   </ItemGroup>

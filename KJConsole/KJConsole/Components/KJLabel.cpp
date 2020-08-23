@@ -1,33 +1,38 @@
 #include "KJLabel.h"
 
-KJConsole::KJLabel::KJLabel()
+void KJConsole::KJLabel::init(char* text)
 {
-	KJLabel(0, 0, 0, 0, nullptr);
+	this->name = text;
 }
 
-KJConsole::KJLabel::KJLabel(int width)
+KJConsole::KJLabel::KJLabel() : KJComponent()
 {
-	KJLabel(width, 1, 0, 0, nullptr);
+	init(nullptr);
 }
 
-KJConsole::KJLabel::KJLabel(int width, int height)
+KJConsole::KJLabel::KJLabel(int width) : KJComponent(width, 1)
 {
-	KJLabel(width, height, 0, 0, nullptr);
+	init(nullptr);
 }
 
-KJConsole::KJLabel::KJLabel(int width, int height, char* text)
+KJConsole::KJLabel::KJLabel(int width, int height) : KJComponent(width, height)
 {
-	KJLabel(width, height, 0, 0, text);
+	init(nullptr);
 }
 
-KJConsole::KJLabel::KJLabel(int width, int height, int x, int y)
+KJConsole::KJLabel::KJLabel(int width, int height, char* text) : KJComponent(width, height)
 {
-	KJLabel(width, height, x, y, nullptr);
+	init(text);
+}
+
+KJConsole::KJLabel::KJLabel(int width, int height, int x, int y) : KJComponent(width, height, x, y)
+{
+	init(nullptr);
 }
 
 KJConsole::KJLabel::KJLabel(int width, int height, int x, int y, char* text) : KJComponent(width, height, x, y)
 {
-	this->name = text;
+	init(text);
 }
 
 void KJConsole::KJLabel::print()
@@ -38,6 +43,8 @@ void KJConsole::KJLabel::print()
 	char* buffer = new char[width + 1];
 	// index: 텍스트 인덱스
 	int index = 0;
+
+	int ox = getOriginX(), oy = getOriginY();
 
 	if (name == nullptr)
 		isEnd = true;
@@ -85,7 +92,7 @@ void KJConsole::KJLabel::print()
 		}
 
 		buffer[width] = 0;
-		Console::setConsolePosition(x, y + i);
+		Console::setConsolePosition(ox + x, oy + y + i);
 		Console::printLine(buffer);
 	}
 }

@@ -30,9 +30,6 @@
     <ClInclude Include="KJConsole\Components\KJComponents.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="KJConsole\Components\KJContainer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="KJConsole\System\ArrayList.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -48,9 +45,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="KJConsole\Components\KJLabel.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="KJConsole\Components\KJContainer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
