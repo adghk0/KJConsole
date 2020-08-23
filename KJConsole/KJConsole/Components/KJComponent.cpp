@@ -21,6 +21,11 @@ void KJConsole::KJComponent::init(int width, int height, int x, int y)
 	setColorSet(0x0f);
 }
 
+void KJConsole::KJComponent::setContainer(KJComponent* container)
+{
+	this->container = container;
+}
+
 void KJConsole::KJComponent::printContainer()
 {
 	this->print();
@@ -125,6 +130,26 @@ int KJConsole::KJComponent::getOriginY()
 	return 0;
 }
 
+int KJConsole::KJComponent::getContainerWidth()
+{
+	if (container == nullptr)
+		return -1;
+	return container->getWidth();
+}
+
+
+int KJConsole::KJComponent::getContainerHeight()
+{
+	if (container == nullptr)
+		return -1;
+	return container->getHeight();
+}
+
+KJConsole::KJComponent* KJConsole::KJComponent::getContainer()
+{
+	return container;
+}
+
 void KJConsole::KJComponent::setWidth(int width)
 {
 	this->width = width;
@@ -165,11 +190,13 @@ void KJConsole::KJComponent::setBounds(int width, int height, int x, int y)
 
 bool KJConsole::KJComponent::add(KJComponent* component)
 {
+	component->setContainer(this);
 	return this->components->add(component);
 }
 
 bool KJConsole::KJComponent::add(KJComponent* component, int index)
 {
+	component->setContainer(this);
 	return this->components->add(component, index);
 }
 
@@ -180,14 +207,17 @@ KJConsole::KJComponent* KJConsole::KJComponent::get(int index)
 
 bool KJConsole::KJComponent::del(int index)
 {
+	components->get(index)->setContainer(nullptr);
 	return components->del(index);
 }
 
 bool KJConsole::KJComponent::del(KJComponent* component)
 {
 	for (int i = 0; i < components->size(); i++)
-		if (components->get(i) == component)
+		if (components->get(i) == component) {
+			components->get(i)->setContainer(nullptr);
 			return components->del(i);
+		}
 	return false;
 }
 

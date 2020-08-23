@@ -24,6 +24,11 @@ namespace KJConsole {
 		// initializing this object
 		void init(int width, int height, int x, int y);
 
+		// void setContainer(KJComponent* container)
+		// set the container.
+		// > Parameter - the container
+		void setContainer(KJComponent* container);
+
 	protected:
 		// the width of the component
 		int width;
@@ -103,6 +108,16 @@ namespace KJConsole {
 		// get origin y-position
 		// > Returns - origin y-position
 		int getOriginY();
+		// int getContainerWidth()
+		// > Returns - container's width
+		int getContainerWidth();
+		// int getContainerHeight()
+		// > Returns - container's height
+		int getContainerHeight();
+		// KJComponent* getContainer()
+		// get the container which has this component
+		// > Returns - the container
+		KJComponent* getContainer();
 
 		// void setWidth(int width)
 		// > Parameter - the new width of the component

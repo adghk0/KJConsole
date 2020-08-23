@@ -4,7 +4,7 @@ using namespace KJConsole;
 
 class Test : public KJComponent {
 public:
-	Test() : KJComponent() {
+	Test() : KJComponent(10, 10, 10, 10) {
 	
 	}
 

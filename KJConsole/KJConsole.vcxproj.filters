@@ -33,6 +33,15 @@
     <ClInclude Include="KJConsole\System\ArrayList.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="KJConsole\Components\KJProgressBar.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KJConsole\Components\KJImage.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KJConsole\Components\KJKeyboard.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="KJConsole\System\KJConsoleSystem.cpp">
@@ -45,6 +54,15 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="KJConsole\Components\KJLabel.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KJConsole\Components\KJProgressBar.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KJConsole\Components\KJImage.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KJConsole\Components\KJKeyboard.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
